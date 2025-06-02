@@ -72,8 +72,17 @@ function PelaporDashboard({ currentUser  }) {
   };
 
   useEffect(() => {
-    fetchInstansi();
-    fetchLaporanSaya();
+      // Set background khusus PelaporDashboard
+      document.body.className = 'pelapor-dashboard-body';
+
+      // Fetch data
+      fetchInstansi();
+      fetchLaporanSaya();
+
+      // Cleanup
+      return () => {
+          document.body.className = '';
+      };
   }, []);
 
   return (

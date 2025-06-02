@@ -1,11 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('/images/bg-gif.gif');
+  font-family: 'Roboto', sans-serif;
+}
+
+body.pelapor-dashboard-body {
+  background-image: url('/images/bg-gif4.gif');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+}
+
+body.petugas-dashboard-body {
+  background-image: url('/images/bg-gif3.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .dashboard-container {

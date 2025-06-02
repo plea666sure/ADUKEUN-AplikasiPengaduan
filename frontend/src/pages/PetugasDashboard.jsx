@@ -139,16 +139,23 @@ function PetugasDashboard() {
   };
 
   useEffect(() => {
+    document.body.className = 'petugas-dashboard-body';
+
     fetchLaporan();
     fetchInstansi();
+
+    return () => {
+      document.body.className = '';
+    };
   }, []);
+
 
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
       <div className="sidebar">
-        <img src='/images/inipp.jpg' alt="Avatar" className="avatar-img" />
-        <div className="petugas-name">Nama Petugas</div>
+        <img src='/images/atmin.jpg' alt="Avatar" className="avatar-img" />
+        <div className="petugas-name">Petugas Ganteng</div>
 
         <button onClick={() => setActivePage('home')}>Home Petugas</button>
         <button onClick={() => setActivePage('laporan')}>Daftar Laporan</button>
@@ -243,34 +250,40 @@ function PetugasDashboard() {
               <button type="submit">Tambah</button>
             </form>
 
-            <div className="instansi-list">
-              {instansi.map((i) => (
-                <div className="instansi-card" key={i.id}>
-                  <div className="instansi-info">
-                    <span>{i.nama}</span>
+            {/* Judul Daftar Instansi */}
+            <div className="instansi-section">
+              <h3>Daftar Instansi</h3>
+
+              <div className="instansi-list">
+                {instansi.map((i) => (
+                  <div className="instansi-card" key={i.id}>
+                    <div className="instansi-info">
+                      {i.nama}
+                    </div>
+                    <div className="instansi-actions">
+                      {editId === i.id ? (
+                        <form onSubmit={handleEditInstansi} style={{ display: 'flex', gap: '5px' }}>
+                          <input
+                            value={editNama}
+                            onChange={(e) => setEditNama(e.target.value)}
+                            required
+                            style={{ flex: '1' }}
+                          />
+                          <button type="submit" className="edit-button">Simpan</button>
+                          <button type="button" onClick={() => setEditId(null)} className="delete-button">Batal</button>
+                        </form>
+                      ) : (
+                        <>
+                          <button onClick={() => { setEditId(i.id); setEditNama(i.nama); }} className="edit-button">Edit</button>
+                          <button onClick={() => handleHapusInstansi(i.id)} className="delete-button">Hapus</button>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div className="instansi-actions">
-                    {editId === i.id ? (
-                      <form onSubmit={handleEditInstansi} style={{ display: 'flex', gap: '5px' }}>
-                        <input
-                          value={editNama}
-                          onChange={(e) => setEditNama(e.target.value)}
-                          required
-                          style={{ flex: '1' }}
-                        />
-                        <button type="submit">Simpan</button>
-                        <button type="button" onClick={() => setEditId(null)}>Batal</button>
-                      </form>
-                    ) : (
-                      <>
-                        <button onClick={() => { setEditId(i.id); setEditNama(i.nama); }}>Edit</button>
-                        <button onClick={() => handleHapusInstansi(i.id)}>Hapus</button>
-                      </>
-                    )}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
           </section>
         )}
       </div>
