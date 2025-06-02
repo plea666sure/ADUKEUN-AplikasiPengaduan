@@ -1,0 +1,15 @@
+# Ignore Python venv
+venv/
+__pycache__/
+*.pyc
+
+# Ignore Node.js stuff
+frontend/node_modules/
+frontend/build/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db
