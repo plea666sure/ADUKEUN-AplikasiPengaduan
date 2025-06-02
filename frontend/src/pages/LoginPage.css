@@ -1,0 +1,152 @@
+/* Navbar */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;  /* Reduced padding for a sleeker look */
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Increased shadow for depth */
+  position: fixed;  /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;  /* Ensure it appears above other content */
+}
+.navbar-logo {
+  font-size: 28px;  /* Slightly larger font */
+  font-weight: bold;
+  color: #003087;
+  text-decoration: none;  /* Remove underline */
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;  /* Adjusted spacing for better readability */
+}
+.navbar-link {
+  color: #003087;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;  /* For hover effect */
+}
+.navbar-link:hover {
+  color: #0055cc;
+}
+
+
+/* Login Page Layout */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/bg-gif.gif') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-form-container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 960px;
+  width: 100%;
+}
+
+.form-section {
+  flex: 2;
+  padding: 40px;
+}
+
+.image-section {
+  flex: 3;
+  background: url('/images/cover-register.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+/* Form styling */
+h2 {
+  color: #003087;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  color: #003087;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #e9f0ff;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #003087;
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0055cc;
+}
+
+.register-button {
+  background: none;
+  border: none;
+  color: #003087;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-form-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;  /* Stack items on mobile */
+    align-items: flex-start;  /* Align to the start */
+    padding: 15px 20px;  /* Adjust padding */
+  }
+  .navbar-links {
+    flex-direction: column;  /* Stack links vertically */
+    gap: 10px;  /* Reduce gap */
+    margin-top: 10px;
+  }
+}

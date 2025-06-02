@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003087;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-link {
+  color: #003087;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #0055cc;
+}
+
+.login-button {
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Register Layout */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/bg-gif2.gif') no-repeat center center;
+  background-size: cover;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+.register-form-container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 960px;
+  width: 100%;
+}
+
+.form-section {
+  flex: 2; /* 60% */
+  padding: 40px;
+}
+
+.image-section {
+  flex: 3; /* 40% */
+  background: url('/images/cover-register.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+/* Form */
+h2 {
+  color: #003087;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  color: #003087;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input,
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #e9f0ff;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0055cc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-form-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
